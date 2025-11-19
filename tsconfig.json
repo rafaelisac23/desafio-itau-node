@@ -1,0 +1,28 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+
+    "lib": ["ES2023"],
+    "module": "nodenext",
+    "target": "es2023",
+    "types": ["node"],
+    "sourceMap": true,
+    "declaration": true,
+
+    "strict": true,
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+
+    "moduleResolution": "nodenext"
+  }
+}
