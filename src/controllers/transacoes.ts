@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, RequestHandler, Response } from "express";
 import { bodyTransacao } from "../types/transacaoTypes";
 import { readFile, writeFile } from "fs/promises";
 
@@ -25,4 +25,9 @@ export const addTransacao = async (
   } catch (err: any) {
     next(err);
   }
+};
+
+export const deleteTransacao: RequestHandler = async (req, res) => {
+  await writeFile("./trans.txt", "[]");
+  res.status(200).json({});
 };

@@ -4,5 +4,6 @@ import * as controllerTransacao from "../controllers/transacoes";
 const router = express.Router();
 
 router.post("/transacao", controllerTransacao.addTransacao);
+router.delete("/transacao", controllerTransacao.deleteTransacao);
 
 export default router;

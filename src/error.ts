@@ -15,7 +15,7 @@ export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
       )
       .map((issue) => issue.message);
 
-    if (errors)
+    if (errors.length > 0)
       return res.status(422).json({
         error: "Erro de validação",
         message: errors,
