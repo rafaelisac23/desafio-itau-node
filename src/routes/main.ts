@@ -1,11 +1,8 @@
 import express from "express";
+import * as controllerTransacao from "../controllers/transacoes";
 
 const router = express.Router();
 
-router.get("/ping", (req, res) => {
-  res.status(200).json({
-    pong: true,
-  });
-});
+router.post("/transacao", controllerTransacao.addTransacao);
 
 export default router;
