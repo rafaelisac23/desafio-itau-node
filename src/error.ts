@@ -8,10 +8,21 @@ export const notFoundRequest: RequestHandler = (req, res) => {
 };
 
 export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-
   if (err instanceof ZodError) {
+    const errors = err.issues
+      .filter(
+        (issue) => issue.path[0] === "valor" || issue.path[0] === "dataHora"
+      )
+      .map((issue) => issue.message);
+
+    if (errors)
+      return res.status(422).json({
+        error: "Erro de validação",
+        message: errors,
+      });
+
     return res.status(400).json({
-      error: "Validation error",
+      error: "Erro de validação",
       issues: err.issues.map((issue) => ({
         path: issue.path.join("."),
         message: issue.message,
