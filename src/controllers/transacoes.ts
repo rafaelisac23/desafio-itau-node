@@ -31,3 +31,5 @@ export const deleteTransacao: RequestHandler = async (req, res) => {
   await writeFile("./trans.txt", "[]");
   res.status(200).json({});
 };
+
+export const getEstatisticas: RequestHandler = async () => {};
