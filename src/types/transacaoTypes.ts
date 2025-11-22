@@ -22,3 +22,5 @@ export const bodyTransacao = z
       ),
   })
   .strict();
+
+export type bodyTransacaoType = z.infer<typeof bodyTransacao>;

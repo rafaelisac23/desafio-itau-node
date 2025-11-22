@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post("/transacao", controllerTransacao.addTransacao);
 router.delete("/transacao", controllerTransacao.deleteTransacao);
-router.get("/transacao", controllerTransacao.deleteTransacao);
+router.get("/estatistica", controllerTransacao.getEstatisticas);
 
 export default router;
