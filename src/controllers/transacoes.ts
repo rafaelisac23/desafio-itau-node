@@ -33,7 +33,7 @@ export const deleteTransacao: RequestHandler = async (req, res) => {
 };
 
 export const getEstatisticas: RequestHandler = async (req, res) => {
-  const now = Date.parse("2024-11-22T09:45:30-03:00");
+  const now = Date.now();
   const oneMinute = 60 * 1000;
   const timeLessOneMinute = now - oneMinute;
 
